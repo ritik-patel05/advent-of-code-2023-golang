@@ -21,7 +21,6 @@ func main() {
 	var calibrationValue int64
 	for scanner.Scan() {
 		line := scanner.Text()
-		fmt.Println(line)
 		calibrationValue += processCalibrationLine(line)
 	}
 
@@ -52,7 +51,6 @@ func processCalibrationLine(line string) (number int64) {
 	}
 
 	number, err := strconv.ParseInt(calibrationValue, 10, 64)
-	fmt.Println(number)
 	if err != nil {
 		fmt.Println(err)
 		panic(err)
